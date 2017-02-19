@@ -1,0 +1,24 @@
+<?php
+Class user_reg_model extends CI_Model
+{
+ function login($username, $password)
+ {
+   $this -> db -> select('User_ID');
+   $this -> db -> from('user_detail');
+   $this -> db -> where('$User_ID', $userid);
+  
+   $this -> db -> limit(1);
+
+   $query = $this -> db -> get();
+
+   if($query -> num_rows() == 1)
+   {
+     return $query->result();
+   }
+   else
+   {
+     return false;
+   }
+ }
+}
+?>

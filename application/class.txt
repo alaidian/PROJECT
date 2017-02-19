@@ -1,0 +1,310 @@
+<?php
+public class ProductBacklog
+{
+	var $Project_ID,$User_ID;
+	public function insertProductBacklog()
+		{}
+	public function updateProductBacklog()
+	{}
+	public function deleteProductBacklog()
+	{}
+	
+}
+public class ProjectDetail
+{
+	var $Project_ID,$Project_Name,$Project_Status;
+	
+	public function insertProjectDetail()
+	{}
+	public function retrieveProjectDetail()
+	{}
+	public function updateProjectDetail()
+	{}
+	public function deleteProject()
+	{}
+
+}
+public class UserDetail
+{
+	var $User_ID,$User_name,$User_Status,$Email_ID,$Password;
+	public function insertUserDetail
+	{}
+	public function checkUserDetail
+	{}
+}
+publicclass MobileLoginPage
+{
+var $username,$password;
+	public function displaySucessMessage()
+	{}
+	public function buttonMobileLogin_clk()
+	{}
+	
+	
+}
+public class UserStoryDetail
+{
+var $Project_ID,$Story_ID,$Story_Name,$UserStory,$Size,$UserStory_Status,$Priority,$Sprint_Number,$Release_Number,$Use_case_ID,$Remarks
+	public function insertUserStoryDetail()
+	{}
+	public function retrieveUserStoryDetail()
+	{}
+	public function updateUserStoryDetail()
+	{}
+	public function deleteUserStoryDetail()
+	{}
+	public function readUserStories()
+	{}
+
+
+}
+public class TaskDetail
+{
+var $Project_ID,$Story_ID,$Task_ID,$Task_Description,$Assigned_To,$Estimated_Hours,$Remaining_Hours,$Task_Status
+	public function checkForTask()
+	{}
+	public function readTaskDetail()
+	{}
+	public function insertTaskDetail()
+	{}
+	public function updateTaskDetail()
+	{}
+	public function deleteTaskDetail()
+	{}
+	public function updateTaskStatus()
+	{}
+	public function updateRemaningHours()
+	{}
+}
+public class EmployeeHomePage
+{
+var $Project_ID,$Project_Name,$Project_Status,$User_ID;
+	public function displayEmployeeHomePage()
+	{}
+	public function selectProject_clk()
+	{}
+	public function viewProductBacklog_clk()
+	{}
+	public function buttonViewDashBoard()
+	{}
+}
+public class listProjectsForm//mobile
+{
+var $Project_ID,$Project_Name,$Project_Status,$User_ID;
+public function button_ViewDashboard_clk()
+	{}
+}
+public class AddUserStoryForm
+{
+var $Project_ID,$Story_ID,$Story_Name,$UserStory,$UserStory_Status,$Size,$Priority,$Sprint_Number,$Release_Number,$Use_case_ID,$Remarks;
+public function displayAddUserStoryForm()
+{}
+public function submitAddUserStoryForm()
+{}
+public function validateAddUserStoryForm()
+{}
+}
+public class EditUserStoryForm
+{
+var $Project_ID,$Story_ID,$Story_Name,$UserStory,$UserStory_Status,$Size,$Priority,$Sprint_Number,$Release_Number,$Use_case_ID,$Remarks;
+public function displayEditUserStoryForm()
+{}
+public function submitEditUserStoryForm()
+{}
+public function validateEditUserStoryForm()
+{}
+}
+public class AdminHomePage
+{
+var $User_ID,$Project_ID;
+	public function buttonAddNewUser_clk()
+	{}
+	public function displayAdminHomePage()
+	{}
+	public function buttonEditProject_clk()
+	{}
+	public function buttonDeleteProject_clk()
+	{}
+	public function promptForConfirmation()
+	{}
+	public function buttonDeleteUser_clk()
+	{}
+	public function buttonEditUserDeatail_clk()
+	{}
+}
+public class UserRegistrationForm
+{
+	var $User_ID,$User_Name,$User_Status,$Password,$Email_ID;
+	public function displayUserRegistrationForm()
+	{}
+	public function validateUserRegistrationForm()
+	{}
+	public function submitUserRegistrationForm()
+	{}
+	public function displaySucessMessage()
+	{}
+	public function closeForm()
+	{}
+}
+public class CreateProjectForm
+{
+	var $Project_ID,$Project_Name,$Project_Status;
+	public function displayCreateProjectForm()
+	{}
+	public function submitCreateProjectForm()
+	{}
+	public function validateProjectDetail()
+	{}
+	
+}
+public class EditProjectForm
+{
+	var $Project_ID,$Project_Name,$Project_Status;
+	public function displayEditProjectForm()
+	{}
+	
+	public function validateProjectDetail()
+	{}
+	
+}
+public class TeamMember
+{
+	var $User_ID,$Project_ID;
+	public function insertTeamMember()
+	{}
+	public function updateTeamMember()
+	{}
+	public function deleteTeamMember()
+	{}
+	
+	
+}
+public class EditUserDetailForm
+{
+	var $User_ID,$User_Name,$User_Status,$Email_ID,$Password;
+	public function displayEditUserDetailForm()
+	{}
+	public function submitEditUserDetailForm()
+	{}
+	public function validateUserDetail()
+	{}
+}
+public class EditTaskForm
+{
+	var $Project_ID,$Story_ID,$Task_ID,$Task_Description,$Assigned_To,$Estimated_Hours,$Remaining_Hours,$Task_Status;
+	public function displayEditTaskForm()
+	{}
+	public function submitEditTaskForm()
+	{}
+	public function validateTaskDetail()
+	{}
+}
+public class ViewTaskForm
+{
+	var $Project_ID,$Story_ID,$Task_ID,$Task_Description,$Assigned_To,$Estimated_Hours,$Remaining_Hours,$Task_Status;
+	public function displayViewTaskForm()
+	{}
+}	
+public class AddTaskForm
+{
+	var $Project_ID,$Story_ID,$Task_ID,$Task_Description,$Assigned_To,$Estimated_Hours,$Remaining_Hours,$Task_Status;
+	public function displayAddTaskForm()
+	{}
+	public function submitEditAddForm()
+	{}
+	public function validateTaskDetail()
+	{}
+}	
+public class WebLoginPage
+{
+		var $username,$password;
+		public function buttonLogin_clk()
+		{}
+}
+public class ViewProjectDetailForm
+{
+		$var $Project_ID,$Project_Name,$Project_Status;
+		public function displayViewProjectDetailForm()
+		{}
+}
+public class ProductBacklogPage
+{
+	var $Project_ID,$Story_ID,$Task_ID,$Task_Description,$Assigned_To,$Estimated_Hours,$Remaining_Hours,$Task_Status,$UserStory,$Size,$UserStory_Status,$Priority,$Sprint_Number,$Release_Number,$Use_case_ID,$Remarks;
+	public function buttonAddUserStory_clk()
+	{}
+	public function displayProductBacklogPage()
+	{}
+	public function buttonEditUserStory_clk()
+	{}
+	public function buttonDeleteUserStory_clk()
+	{}
+	public function buttonDeleteTask_clk()
+	{}
+	public function promptForConfirmation()
+	{}
+	public function displayErrorMessage()
+	{}
+	public function buttonEditTask_clk()
+	{}
+	public function checkboxShowTask()
+	{}
+}
+public class ViewDashboardPageMobile
+{
+	 var $Project_ID,$Story_ID,$Task_ID,$Assigned_To,$Estimated_Hours,$Remaining_Hours,$Task_Status;
+	 public class displayViewDashboardPageMobile()
+	 {}
+}
+public class AdminController
+{
+	var $User_ID,$User_Name,$User_Status,,$Project_ID,$Project_Name,$Project_Status;
+	private $Email_ID,$Password,
+	
+	public function generatePassword()
+	{}
+	public function sendEmail()
+	{}
+	public function selectGivenProject()
+	{}
+	public function selectGivenUser()
+	{}
+	public function saveUserDetail()
+	{}
+	public function saveProjectDetail()
+	{}
+}
+public class ViewDashboardPage//web
+{
+	var $Project_ID,$Story_ID.$Task_ID,$Task_Description,$Assigned_To,$Estimated_Hours,$Remaining_Hours,$Task_Status;
+	public function displayViewDashboardPage()
+	{}
+}
+public class DashboardController
+{
+	 var $Project_ID,$Project_Name,$Project_Status,$Story_ID,$Story_Name,$UserStory,$UserStory_Status,$Size,$Priority,$Sprint_Number,$Release_Number,$Use_case_ID,$Task_ID,$Task_Description,$Assigned_To,$Estimated_Hours,$Remaining_Hours,$Task_Status;
+	 public function saveTaskDetail()
+	 {}
+	 public function saveUserStoryDetail()
+	 {}
+	 public function ifTaskExists()
+	 {}
+	 public function selectGivenUserStory()
+	 {}
+	 public function Login()
+	 {}
+	 public function getNewStatus()
+	 {}
+	 public function selectGivenProject()
+	 {}
+	 public function getDashboardDetails()
+	 {}
+	 public function selectGivenTask()
+	 {}
+	 public function remainingHours_dblclk()
+	 {}
+	 public function selectGivenUserDeatail()
+	 {}
+	
+}
+
+?>
