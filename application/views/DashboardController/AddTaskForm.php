@@ -11,12 +11,12 @@
 	 <table cellspacing="30pt">
 		<tr>
 		<td>Task id:</td>
-     	<td><input type="text" size="20" id="taskid" name="taskid"  value="<?php echo set_value('taskid'); ?>"/>
+     	<td><input type="text" size="20" id="taskid" name="taskid" placeholder="Enter Task id"  value="<?php echo set_value('taskid'); ?>"/>
 	 	<td><span class="error"><?php echo form_error('taskid'); ?></span></td>
 		</tr>
 		<tr>
     	<td>Task Description :</td>
-     	<td><textarea id="taskdescription" name="taskdescription" value="<?php echo set_value('taskdescription'); ?>" /></textarea>
+     	<td><textarea id="taskdescription" name="taskdescription" placeholder="Enter Task Description " value="<?php echo set_value('taskdescription'); ?>" /></textarea>
 	 	<td><span class="error"><?php echo form_error('taskdescription'); ?></span></td>
 		</tr>
 		<tr>
@@ -42,7 +42,7 @@
 		</td>
 		</tr>
 		<td>Estimated Hours :
-     	<td><input type="text" size="20" id="estimatedhours" name="estimatedhours" value="<?php echo set_value('estimatedhours'); ?>"/>
+     	<td><input type="text" size="20" id="estimatedhours" name="estimatedhours" placeholder="Enter Estimated Hours " value="<?php echo set_value('estimatedhours'); ?>"/>
 		<td><span class="error"> <?php echo form_error('estimatedhours'); ?></span></td>
 		</tr>
 		

@@ -1,28 +1,18 @@
-<<<<<<< HEAD
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-=======
-<?php defined('BASEPATH') OR exit('No direct script access allowed');
->>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 /*
 |--------------------------------------------------------------------------
 | Enable/Disable Migrations
 |--------------------------------------------------------------------------
 |
-<<<<<<< HEAD
 | Migrations are disabled by default for security reasons.
 | You should enable migrations whenever you intend to do a schema migration
 | and disable it back when you're done.
-=======
-| Migrations are disabled by default but should be enabled 
-| whenever you intend to do a schema migration.
->>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 |
 */
 $config['migration_enabled'] = FALSE;
 
-<<<<<<< HEAD
 /*
 |--------------------------------------------------------------------------
 | Migration Type
@@ -68,8 +58,6 @@ $config['migration_table'] = 'migrations';
 |
 */
 $config['migration_auto_latest'] = FALSE;
-=======
->>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 
 /*
 |--------------------------------------------------------------------------
@@ -77,20 +65,12 @@ $config['migration_auto_latest'] = FALSE;
 |--------------------------------------------------------------------------
 |
 | This is used to set migration version that the file system should be on.
-<<<<<<< HEAD
 | If you run $this->migration->current() this is the version that schema will
-=======
-| If you run $this->migration->latest() this is the version that schema will
->>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 | be upgraded / downgraded to.
 |
 */
 $config['migration_version'] = 0;
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 /*
 |--------------------------------------------------------------------------
 | Migrations Path
@@ -101,12 +81,4 @@ $config['migration_version'] = 0;
 | Also, writing permission is required within the migrations path.
 |
 */
-<<<<<<< HEAD
 $config['migration_path'] = APPPATH.'migrations/';
-=======
-$config['migration_path'] = APPPATH . 'migrations/';
-
-
-/* End of file migration.php */
-/* Location: ./application/config/migration.php */
->>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc

@@ -1,10 +1,6 @@
-<<<<<<< HEAD
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-=======
-<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
->>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 /*
 | -------------------------------------------------------------------
 | AUTO-LOADER
@@ -26,48 +22,29 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 | 1. Packages
 | 2. Libraries
-<<<<<<< HEAD
 | 3. Drivers
 | 4. Helper files
 | 5. Custom config files
 | 6. Language files
 | 7. Models
-=======
-| 3. Helper files
-| 4. Custom config files
-| 5. Language files
-| 6. Models
->>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 |
 */
 
 /*
 | -------------------------------------------------------------------
-<<<<<<< HEAD
 |  Auto-load Packages
-=======
-|  Auto-load Packges
->>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 | -------------------------------------------------------------------
 | Prototype:
 |
 |  $autoload['packages'] = array(APPPATH.'third_party', '/usr/local/shared');
 |
 */
-<<<<<<< HEAD
 $autoload['packages'] = array();
 
-=======
-
-$autoload['packages'] = array();
-
-
->>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 /*
 | -------------------------------------------------------------------
 |  Auto-load Libraries
 | -------------------------------------------------------------------
-<<<<<<< HEAD
 | These are the classes located in system/libraries/ or your
 | application/libraries/ directory, with the addition of the
 | 'database' library, which is somewhat of a special case.
@@ -103,18 +80,6 @@ $autoload['libraries'] = array('database','session');
 |
 */
 $autoload['drivers'] = array();
-=======
-| These are the classes located in the system/libraries folder
-| or in your application/libraries folder.
-|
-| Prototype:
-|
-|	$autoload['libraries'] = array('database', 'session', 'xmlrpc');
-*/
-
-$autoload['libraries'] = array();
-
->>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 
 /*
 | -------------------------------------------------------------------
@@ -124,13 +89,7 @@ $autoload['libraries'] = array();
 |
 |	$autoload['helper'] = array('url', 'file');
 */
-<<<<<<< HEAD
 $autoload['helper'] = array('url');
-=======
-
-$autoload['helper'] = array();
-
->>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 
 /*
 | -------------------------------------------------------------------
@@ -144,15 +103,8 @@ $autoload['helper'] = array();
 | config files.  Otherwise, leave it blank.
 |
 */
-<<<<<<< HEAD
 $autoload['config'] = array();
 
-=======
-
-$autoload['config'] = array();
-
-
->>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 /*
 | -------------------------------------------------------------------
 |  Auto-load Language files
@@ -165,22 +117,14 @@ $autoload['config'] = array();
 | "codeigniter_lang.php" would be referenced as array('codeigniter');
 |
 */
-<<<<<<< HEAD
 $autoload['language'] = array();
 
-=======
-
-$autoload['language'] = array();
-
-
->>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 /*
 | -------------------------------------------------------------------
 |  Auto-load Models
 | -------------------------------------------------------------------
 | Prototype:
 |
-<<<<<<< HEAD
 |	$autoload['model'] = array('first_model', 'second_model');
 |
 | You can also supply an alternative model name to be assigned
@@ -189,14 +133,3 @@ $autoload['language'] = array();
 |	$autoload['model'] = array('first_model' => 'first');
 */
 $autoload['model'] = array();
-=======
-|	$autoload['model'] = array('model1', 'model2');
-|
-*/
-
-$autoload['model'] = array();
-
-
-/* End of file autoload.php */
-/* Location: ./application/config/autoload.php */
->>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc

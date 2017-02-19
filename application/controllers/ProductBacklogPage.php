@@ -6,19 +6,11 @@ include('AddUserStoryForm.php');
 	 // function buttonAddUserStory_clk()
 	 function index() 
 	{
-<<<<<<< HEAD
 		/*$this->load->library('session');
 		$addobj=new AddUserStoryForm();
 		$addobj->index();*/
 		//$this->displayAddUserStoryForm();
 		//$this->remap('AddUserStoryForm');
-=======
-
-		$obj=new AddUserStoryForm();
-		$obj->index();
-
-		
->>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 		
 	$this->load->view('product_backlog');
 	$this->load->model('product_backlog_model');
@@ -78,7 +70,6 @@ echo "<img src='../image/addtask.jpg' align='right' height='50' width='50'/>";
 	{}
 	  function checkboxShowTask()
 	{}
-<<<<<<< HEAD
 	/*function _remap($controller)
 	{
 	
@@ -87,8 +78,5 @@ echo "<img src='../image/addtask.jpg' align='right' height='50' width='50'/>";
     $oHome->index();
   
 }*/
-=======
-	
->>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 }
 ?>

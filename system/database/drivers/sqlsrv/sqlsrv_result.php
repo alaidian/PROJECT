@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php
 /**
  * CodeIgniter
@@ -37,25 +36,6 @@
  * @filesource
  */
 defined('BASEPATH') OR exit('No direct script access allowed');
-=======
-<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-/**
- * CodeIgniter
- *
- * An open source application development framework for PHP 5.1.6 or newer
- *
- * @package		CodeIgniter
- * @author		EllisLab Dev Team
- * @copyright		Copyright (c) 2008 - 2014, EllisLab, Inc.
- * @copyright		Copyright (c) 2014 - 2015, British Columbia Institute of Technology (http://bcit.ca/)
- * @license		http://codeigniter.com/user_guide/license.html
- * @link		http://codeigniter.com
- * @since		Version 1.0
- * @filesource
- */
-
-// ------------------------------------------------------------------------
->>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 
 /**
  * SQLSRV Result Class
@@ -64,16 +44,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  *
  * @category	Database
  * @author		EllisLab Dev Team
-<<<<<<< HEAD
  * @link		https://codeigniter.com/user_guide/database/
-=======
- * @link		http://codeigniter.com/user_guide/database/
->>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
  */
 class CI_DB_sqlsrv_result extends CI_DB_result {
 
 	/**
-<<<<<<< HEAD
 	 * Scrollable flag
 	 *
 	 * @var	mixed
@@ -113,16 +88,6 @@ class CI_DB_sqlsrv_result extends CI_DB_result {
 		return is_int($this->num_rows)
 			? $this->num_rows
 			: $this->num_rows = sqlsrv_num_rows($this->result_id);
-=======
-	 * Number of rows in the result set
-	 *
-	 * @access	public
-	 * @return	integer
-	 */
-	function num_rows()
-	{
-		return @sqlsrv_num_rows($this->result_id);
->>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 	}
 
 	// --------------------------------------------------------------------
@@ -130,16 +95,9 @@ class CI_DB_sqlsrv_result extends CI_DB_result {
 	/**
 	 * Number of fields in the result set
 	 *
-<<<<<<< HEAD
 	 * @return	int
 	 */
 	public function num_fields()
-=======
-	 * @access	public
-	 * @return	integer
-	 */
-	function num_fields()
->>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 	{
 		return @sqlsrv_num_fields($this->result_id);
 	}
@@ -151,7 +109,6 @@ class CI_DB_sqlsrv_result extends CI_DB_result {
 	 *
 	 * Generates an array of column names
 	 *
-<<<<<<< HEAD
 	 * @return	array
 	 */
 	public function list_fields()
@@ -162,19 +119,6 @@ class CI_DB_sqlsrv_result extends CI_DB_result {
 			$field_names[] = $field['Name'];
 		}
 
-=======
-	 * @access	public
-	 * @return	array
-	 */
-	function list_fields()
-	{
-		$field_names = array();
-		foreach(sqlsrv_field_metadata($this->result_id) as $offset => $field)
-		{
-			$field_names[] = $field['Name'];
-		}
-		
->>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 		return $field_names;
 	}
 
@@ -185,7 +129,6 @@ class CI_DB_sqlsrv_result extends CI_DB_result {
 	 *
 	 * Generates an array of objects containing field meta-data
 	 *
-<<<<<<< HEAD
 	 * @return	array
 	 */
 	public function field_data()
@@ -199,26 +142,6 @@ class CI_DB_sqlsrv_result extends CI_DB_result {
 			$retval[$i]->max_length	= $field['Size'];
 		}
 
-=======
-	 * @access	public
-	 * @return	array
-	 */
-	function field_data()
-	{
-		$retval = array();
-		foreach(sqlsrv_field_metadata($this->result_id) as $offset => $field)
-		{
-			$F 				= new stdClass();
-			$F->name 		= $field['Name'];
-			$F->type 		= $field['Type'];
-			$F->max_length	= $field['Size'];
-			$F->primary_key = 0;
-			$F->default		= '';
-			
-			$retval[] = $F;
-		}
-		
->>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 		return $retval;
 	}
 
@@ -227,15 +150,9 @@ class CI_DB_sqlsrv_result extends CI_DB_result {
 	/**
 	 * Free the result
 	 *
-<<<<<<< HEAD
 	 * @return	void
 	 */
 	public function free_result()
-=======
-	 * @return	null
-	 */
-	function free_result()
->>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 	{
 		if (is_resource($this->result_id))
 		{
@@ -247,40 +164,13 @@ class CI_DB_sqlsrv_result extends CI_DB_result {
 	// --------------------------------------------------------------------
 
 	/**
-<<<<<<< HEAD
-=======
-	 * Data Seek
-	 *
-	 * Moves the internal pointer to the desired offset.  We call
-	 * this internally before fetching results to make sure the
-	 * result set starts at zero
-	 *
-	 * @access	private
-	 * @return	array
-	 */
-	function _data_seek($n = 0)
-	{
-		// Not implemented
-	}
-
-	// --------------------------------------------------------------------
-
-	/**
->>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 	 * Result - associative array
 	 *
 	 * Returns the result set as an array
 	 *
-<<<<<<< HEAD
 	 * @return	array
 	 */
 	protected function _fetch_assoc()
-=======
-	 * @access	private
-	 * @return	array
-	 */
-	function _fetch_assoc()
->>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 	{
 		return sqlsrv_fetch_array($this->result_id, SQLSRV_FETCH_ASSOC);
 	}
@@ -292,7 +182,6 @@ class CI_DB_sqlsrv_result extends CI_DB_result {
 	 *
 	 * Returns the result set as an object
 	 *
-<<<<<<< HEAD
 	 * @param	string	$class_name
 	 * @return	object
 	 */
@@ -302,18 +191,3 @@ class CI_DB_sqlsrv_result extends CI_DB_result {
 	}
 
 }
-=======
-	 * @access	private
-	 * @return	object
-	 */
-	function _fetch_object()
-	{
-		return sqlsrv_fetch_object($this->result_id);
-	}
-
-}
-
-
-/* End of file mssql_result.php */
-/* Location: ./system/database/drivers/mssql/mssql_result.php */
->>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc

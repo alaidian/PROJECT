@@ -1,10 +1,6 @@
-<<<<<<< HEAD
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-=======
-<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
->>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 /*
 | -------------------------------------------------------------------------
 | URI ROUTING
@@ -23,21 +19,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 | Please see the user guide for complete details:
 |
-<<<<<<< HEAD
 |	https://codeigniter.com/user_guide/general/routing.html
-=======
-|	http://codeigniter.com/user_guide/general/routing.html
->>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 |
 | -------------------------------------------------------------------------
 | RESERVED ROUTES
 | -------------------------------------------------------------------------
 |
-<<<<<<< HEAD
 | There are three reserved routes:
-=======
-| There area two reserved routes:
->>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 |
 |	$route['default_controller'] = 'welcome';
 |
@@ -47,7 +35,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 |	$route['404_override'] = 'errors/page_missing';
 |
-<<<<<<< HEAD
 | This route will tell the Router which controller/method to use if those
 | provided in the URL cannot be matched to a valid route.
 |
@@ -86,16 +73,3 @@ $route['(:any)']='pages/view/$1';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 $route['email'] = 'AdminController';
-=======
-| This route will tell the Router what URI segments to use if those provided
-| in the URL cannot be matched to a valid route.
-|
-*/
-
-$route['default_controller'] = "welcome";
-$route['404_override'] = '';
-
-
-/* End of file routes.php */
-/* Location: ./application/config/routes.php */
->>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc

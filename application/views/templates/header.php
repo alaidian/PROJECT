@@ -61,7 +61,7 @@
         <div id="navbar">
            <ol class="breadcrumb" style="background-color:#910836">
             <li><a href="<?php echo base_url(); ?>home"><span class="glyphicon glyphicon-home"></span>Home</a></li>
-            <li><a href="<?php echo base_url(); ?>about"><span class="glyphicon glyphicon-envelope"></span>Features</a></li>
+            <li><a href="<?php echo base_url(); ?>about"><span class="glyphicon glyphicon-align-left"></span>Features</a></li>
              <li><a href="<?php echo base_url(); ?>login"><span class="glyphicon glyphicon-lock"></span>Login</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php
 /**
  * CodeIgniter
@@ -37,25 +36,6 @@
  * @filesource
  */
 defined('BASEPATH') OR exit('No direct script access allowed');
-=======
-<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-/**
- * CodeIgniter
- *
- * An open source application development framework for PHP 5.1.6 or newer
- *
- * @package		CodeIgniter
- * @author		EllisLab Dev Team
- * @copyright		Copyright (c) 2008 - 2014, EllisLab, Inc.
- * @copyright		Copyright (c) 2014 - 2015, British Columbia Institute of Technology (http://bcit.ca/)
- * @license		http://codeigniter.com/user_guide/license.html
- * @link		http://codeigniter.com
- * @since		Version 1.0
- * @filesource
- */
-
-// ------------------------------------------------------------------------
->>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 
 /**
  * CodeIgniter Directory Helpers
@@ -64,16 +44,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * @subpackage	Helpers
  * @category	Helpers
  * @author		EllisLab Dev Team
-<<<<<<< HEAD
  * @link		https://codeigniter.com/user_guide/helpers/directory_helper.html
-=======
- * @link		http://codeigniter.com/user_guide/helpers/directory_helper.html
->>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
  */
 
 // ------------------------------------------------------------------------
 
-<<<<<<< HEAD
 if ( ! function_exists('directory_map'))
 {
 	/**
@@ -89,22 +64,6 @@ if ( ! function_exists('directory_map'))
 	 * @param	bool	$hidden			Whether to show hidden files
 	 * @return	array
 	 */
-=======
-/**
- * Create a Directory Map
- *
- * Reads the specified directory and builds an array
- * representation of it.  Sub-folders contained with the
- * directory will be mapped as well.
- *
- * @access	public
- * @param	string	path to source
- * @param	int		depth of directories to traverse (0 = fully recursive, 1 = current dir, etc)
- * @return	array
- */
-if ( ! function_exists('directory_map'))
-{
->>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 	function directory_map($source_dir, $directory_depth = 0, $hidden = FALSE)
 	{
 		if ($fp = @opendir($source_dir))
@@ -116,26 +75,16 @@ if ( ! function_exists('directory_map'))
 			while (FALSE !== ($file = readdir($fp)))
 			{
 				// Remove '.', '..', and hidden files [optional]
-<<<<<<< HEAD
 				if ($file === '.' OR $file === '..' OR ($hidden === FALSE && $file[0] === '.'))
-=======
-				if ( ! trim($file, '.') OR ($hidden == FALSE && $file[0] == '.'))
->>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 				{
 					continue;
 				}
 
-<<<<<<< HEAD
 				is_dir($source_dir.$file) && $file .= DIRECTORY_SEPARATOR;
 
 				if (($directory_depth < 1 OR $new_depth > 0) && is_dir($source_dir.$file))
 				{
 					$filedata[$file] = directory_map($source_dir.$file, $new_depth, $hidden);
-=======
-				if (($directory_depth < 1 OR $new_depth > 0) && @is_dir($source_dir.$file))
-				{
-					$filedata[$file] = directory_map($source_dir.$file.DIRECTORY_SEPARATOR, $new_depth, $hidden);
->>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 				}
 				else
 				{
@@ -150,10 +99,3 @@ if ( ! function_exists('directory_map'))
 		return FALSE;
 	}
 }
-<<<<<<< HEAD
-=======
-
-
-/* End of file directory_helper.php */
-/* Location: ./system/helpers/directory_helper.php */
->>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc

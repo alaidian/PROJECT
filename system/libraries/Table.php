@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php
 /**
  * CodeIgniter
@@ -37,25 +36,6 @@
  * @filesource
  */
 defined('BASEPATH') OR exit('No direct script access allowed');
-=======
-<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-/**
- * CodeIgniter
- *
- * An open source application development framework for PHP 5.1.6 or newer
- *
- * @package		CodeIgniter
- * @author		EllisLab Dev Team
- * @copyright		Copyright (c) 2008 - 2014, EllisLab, Inc.
- * @copyright		Copyright (c) 2014 - 2015, British Columbia Institute of Technology (http://bcit.ca/)
- * @license		http://codeigniter.com/user_guide/license.html
- * @link		http://codeigniter.com
- * @since		Version 1.3.1
- * @filesource
- */
-
-// ------------------------------------------------------------------------
->>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 
 /**
  * HTML Table Generating Class
@@ -66,7 +46,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * @subpackage	Libraries
  * @category	HTML Tables
  * @author		EllisLab Dev Team
-<<<<<<< HEAD
  * @link		https://codeigniter.com/user_guide/libraries/table.html
  */
 class CI_Table {
@@ -142,24 +121,6 @@ class CI_Table {
 		}
 
 		log_message('info', 'Table Class Initialized');
-=======
- * @link		http://codeigniter.com/user_guide/libraries/uri.html
- */
-class CI_Table {
-
-	var $rows				= array();
-	var $heading			= array();
-	var $auto_heading		= TRUE;
-	var $caption			= NULL;
-	var $template			= NULL;
-	var $newline			= "\n";
-	var $empty_cells		= "";
-	var	$function			= FALSE;
-
-	public function __construct()
-	{
-		log_message('debug', "Table Class Initialized");
->>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 	}
 
 	// --------------------------------------------------------------------
@@ -167,18 +128,10 @@ class CI_Table {
 	/**
 	 * Set the template
 	 *
-<<<<<<< HEAD
 	 * @param	array	$template
 	 * @return	bool
 	 */
 	public function set_template($template)
-=======
-	 * @access	public
-	 * @param	array
-	 * @return	void
-	 */
-	function set_template($template)
->>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 	{
 		if ( ! is_array($template))
 		{
@@ -186,10 +139,7 @@ class CI_Table {
 		}
 
 		$this->template = $template;
-<<<<<<< HEAD
 		return TRUE;
-=======
->>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 	}
 
 	// --------------------------------------------------------------------
@@ -199,7 +149,6 @@ class CI_Table {
 	 *
 	 * Can be passed as an array or discreet params
 	 *
-<<<<<<< HEAD
 	 * @param	mixed
 	 * @return	CI_Table
 	 */
@@ -207,22 +156,11 @@ class CI_Table {
 	{
 		$this->heading = $this->_prep_args(func_get_args());
 		return $this;
-=======
-	 * @access	public
-	 * @param	mixed
-	 * @return	void
-	 */
-	function set_heading()
-	{
-		$args = func_get_args();
-		$this->heading = $this->_prep_args($args);
->>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 	}
 
 	// --------------------------------------------------------------------
 
 	/**
-<<<<<<< HEAD
 	 * Set columns. Takes a one-dimensional array as input and creates
 	 * a multi-dimensional array with a depth equal to the number of
 	 * columns. This allows a single array with many elements to be
@@ -235,21 +173,6 @@ class CI_Table {
 	public function make_columns($array = array(), $col_limit = 0)
 	{
 		if ( ! is_array($array) OR count($array) === 0 OR ! is_int($col_limit))
-=======
-	 * Set columns.  Takes a one-dimensional array as input and creates
-	 * a multi-dimensional array with a depth equal to the number of
-	 * columns.  This allows a single array with many elements to  be
-	 * displayed in a table that has a fixed column count.
-	 *
-	 * @access	public
-	 * @param	array
-	 * @param	int
-	 * @return	void
-	 */
-	function make_columns($array = array(), $col_limit = 0)
-	{
-		if ( ! is_array($array) OR count($array) == 0)
->>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 		{
 			return FALSE;
 		}
@@ -258,21 +181,13 @@ class CI_Table {
 		// will want headings from a one-dimensional array
 		$this->auto_heading = FALSE;
 
-<<<<<<< HEAD
 		if ($col_limit === 0)
-=======
-		if ($col_limit == 0)
->>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 		{
 			return $array;
 		}
 
 		$new = array();
-<<<<<<< HEAD
 		do
-=======
-		while (count($array) > 0)
->>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 		{
 			$temp = array_splice($array, 0, $col_limit);
 
@@ -286,10 +201,7 @@ class CI_Table {
 
 			$new[] = $temp;
 		}
-<<<<<<< HEAD
 		while (count($array) > 0);
-=======
->>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 
 		return $new;
 	}
@@ -301,7 +213,6 @@ class CI_Table {
 	 *
 	 * Can be passed as an array or discreet params
 	 *
-<<<<<<< HEAD
 	 * @param	mixed	$value
 	 * @return	CI_Table
 	 */
@@ -309,15 +220,6 @@ class CI_Table {
 	{
 		$this->empty_cells = $value;
 		return $this;
-=======
-	 * @access	public
-	 * @param	mixed
-	 * @return	void
-	 */
-	function set_empty($value)
-	{
-		$this->empty_cells = $value;
->>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 	}
 
 	// --------------------------------------------------------------------
@@ -327,7 +229,6 @@ class CI_Table {
 	 *
 	 * Can be passed as an array or discreet params
 	 *
-<<<<<<< HEAD
 	 * @param	mixed
 	 * @return	CI_Table
 	 */
@@ -335,16 +236,6 @@ class CI_Table {
 	{
 		$this->rows[] = $this->_prep_args(func_get_args());
 		return $this;
-=======
-	 * @access	public
-	 * @param	mixed
-	 * @return	void
-	 */
-	function add_row()
-	{
-		$args = func_get_args();
-		$this->rows[] = $this->_prep_args($args);
->>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 	}
 
 	// --------------------------------------------------------------------
@@ -354,23 +245,14 @@ class CI_Table {
 	 *
 	 * Ensures a standard associative array format for all cell data
 	 *
-<<<<<<< HEAD
 	 * @param	array
 	 * @return	array
 	 */
 	protected function _prep_args($args)
-=======
-	 * @access	public
-	 * @param	type
-	 * @return	type
-	 */
-	function _prep_args($args)
->>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 	{
 		// If there is no $args[0], skip this and treat as an associative array
 		// This can happen if there is only a single key, for example this is passed to table->generate
 		// array(array('foo'=>'bar'))
-<<<<<<< HEAD
 		if (isset($args[0]) && count($args) === 1 && is_array($args[0]) && ! isset($args[0]['data']))
 		{
 			$args = $args[0];
@@ -379,35 +261,6 @@ class CI_Table {
 		foreach ($args as $key => $val)
 		{
 			is_array($val) OR $args[$key] = array('data' => $val);
-=======
-		if (isset($args[0]) AND (count($args) == 1 && is_array($args[0])))
-		{
-			// args sent as indexed array
-			if ( ! isset($args[0]['data']))
-			{
-				foreach ($args[0] as $key => $val)
-				{
-					if (is_array($val) && isset($val['data']))
-					{
-						$args[$key] = $val;
-					}
-					else
-					{
-						$args[$key] = array('data' => $val);
-					}
-				}
-			}
-		}
-		else
-		{
-			foreach ($args as $key => $val)
-			{
-				if ( ! is_array($val))
-				{
-					$args[$key] = array('data' => $val);
-				}
-			}
->>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 		}
 
 		return $args;
@@ -418,18 +271,10 @@ class CI_Table {
 	/**
 	 * Add a table caption
 	 *
-<<<<<<< HEAD
 	 * @param	string	$caption
 	 * @return	CI_Table
 	 */
 	public function set_caption($caption)
-=======
-	 * @access	public
-	 * @param	string
-	 * @return	void
-	 */
-	function set_caption($caption)
->>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 	{
 		$this->caption = $caption;
 	}
@@ -439,7 +284,6 @@ class CI_Table {
 	/**
 	 * Generate the table
 	 *
-<<<<<<< HEAD
 	 * @param	mixed	$table_data
 	 * @return	string
 	 */
@@ -461,31 +305,6 @@ class CI_Table {
 
 		// Is there anything to display? No? Smite them!
 		if (empty($this->heading) && empty($this->rows))
-=======
-	 * @access	public
-	 * @param	mixed
-	 * @return	string
-	 */
-	function generate($table_data = NULL)
-	{
-		// The table data can optionally be passed to this function
-		// either as a database result object or an array
-		if ( ! is_null($table_data))
-		{
-			if (is_object($table_data))
-			{
-				$this->_set_from_object($table_data);
-			}
-			elseif (is_array($table_data))
-			{
-				$set_heading = (count($this->heading) == 0 AND $this->auto_heading == FALSE) ? FALSE : TRUE;
-				$this->_set_from_array($table_data, $set_heading);
-			}
-		}
-
-		// Is there anything to display?  No?  Smite them!
-		if (count($this->heading) == 0 AND count($this->rows) == 0)
->>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 		{
 			return 'Undefined table data';
 		}
@@ -493,7 +312,6 @@ class CI_Table {
 		// Compile and validate the template date
 		$this->_compile_template();
 
-<<<<<<< HEAD
 		// Validate a possibly existing custom cell manipulation function
 		if (isset($this->function) && ! is_callable($this->function))
 		{
@@ -503,20 +321,10 @@ class CI_Table {
 		// Build the table!
 
 		$out = $this->template['table_open'].$this->newline;
-=======
-		// set a custom cell manipulation function to a locally scoped variable so its callable
-		$function = $this->function;
-
-		// Build the table!
-
-		$out = $this->template['table_open'];
-		$out .= $this->newline;
->>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 
 		// Add any caption here
 		if ($this->caption)
 		{
-<<<<<<< HEAD
 			$out .= '<caption>'.$this->caption.'</caption>'.$this->newline;
 		}
 
@@ -524,20 +332,6 @@ class CI_Table {
 		if ( ! empty($this->heading))
 		{
 			$out .= $this->template['thead_open'].$this->newline.$this->template['heading_row_start'].$this->newline;
-=======
-			$out .= $this->newline;
-			$out .= '<caption>' . $this->caption . '</caption>';
-			$out .= $this->newline;
-		}
-
-		// Is there a table heading to display?
-		if (count($this->heading) > 0)
-		{
-			$out .= $this->template['thead_open'];
-			$out .= $this->newline;
-			$out .= $this->template['heading_row_start'];
-			$out .= $this->newline;
->>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 
 			foreach ($this->heading as $heading)
 			{
@@ -545,7 +339,6 @@ class CI_Table {
 
 				foreach ($heading as $key => $val)
 				{
-<<<<<<< HEAD
 					if ($key !== 'data')
 					{
 						$temp = str_replace('<th', '<th '.$key.'="'.$val.'"', $temp);
@@ -562,30 +355,6 @@ class CI_Table {
 		if ( ! empty($this->rows))
 		{
 			$out .= $this->template['tbody_open'].$this->newline;
-=======
-					if ($key != 'data')
-					{
-						$temp = str_replace('<th', "<th $key='$val'", $temp);
-					}
-				}
-
-				$out .= $temp;
-				$out .= isset($heading['data']) ? $heading['data'] : '';
-				$out .= $this->template['heading_cell_end'];
-			}
-
-			$out .= $this->template['heading_row_end'];
-			$out .= $this->newline;
-			$out .= $this->template['thead_close'];
-			$out .= $this->newline;
-		}
-
-		// Build the table rows
-		if (count($this->rows) > 0)
-		{
-			$out .= $this->template['tbody_open'];
-			$out .= $this->newline;
->>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 
 			$i = 1;
 			foreach ($this->rows as $row)
@@ -596,16 +365,9 @@ class CI_Table {
 				}
 
 				// We use modulus to alternate the row colors
-<<<<<<< HEAD
 				$name = fmod($i++, 2) ? '' : 'alt_';
 
 				$out .= $this->template['row_'.$name.'start'].$this->newline;
-=======
-				$name = (fmod($i++, 2)) ? '' : 'alt_';
-
-				$out .= $this->template['row_'.$name.'start'];
-				$out .= $this->newline;
->>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 
 				foreach ($row as $cell)
 				{
@@ -613,22 +375,15 @@ class CI_Table {
 
 					foreach ($cell as $key => $val)
 					{
-<<<<<<< HEAD
 						if ($key !== 'data')
 						{
 							$temp = str_replace('<td', '<td '.$key.'="'.$val.'"', $temp);
-=======
-						if ($key != 'data')
-						{
-							$temp = str_replace('<td', "<td $key='$val'", $temp);
->>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 						}
 					}
 
 					$cell = isset($cell['data']) ? $cell['data'] : '';
 					$out .= $temp;
 
-<<<<<<< HEAD
 					if ($cell === '' OR $cell === NULL)
 					{
 						$out .= $this->empty_cells;
@@ -640,40 +395,15 @@ class CI_Table {
 					else
 					{
 						$out .= $cell;
-=======
-					if ($cell === "" OR $cell === NULL)
-					{
-						$out .= $this->empty_cells;
-					}
-					else
-					{
-						if ($function !== FALSE && is_callable($function))
-						{
-							$out .= call_user_func($function, $cell);
-						}
-						else
-						{
-							$out .= $cell;
-						}
->>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 					}
 
 					$out .= $this->template['cell_'.$name.'end'];
 				}
 
-<<<<<<< HEAD
 				$out .= $this->template['row_'.$name.'end'].$this->newline;
 			}
 
 			$out .= $this->template['tbody_close'].$this->newline;
-=======
-				$out .= $this->template['row_'.$name.'end'];
-				$out .= $this->newline;
-			}
-
-			$out .= $this->template['tbody_close'];
-			$out .= $this->newline;
->>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 		}
 
 		$out .= $this->template['table_close'];
@@ -689,7 +419,6 @@ class CI_Table {
 	/**
 	 * Clears the table arrays.  Useful if multiple tables are being generated
 	 *
-<<<<<<< HEAD
 	 * @return	CI_Table
 	 */
 	public function clear()
@@ -698,16 +427,6 @@ class CI_Table {
 		$this->heading = array();
 		$this->auto_heading = TRUE;
 		return $this;
-=======
-	 * @access	public
-	 * @return	void
-	 */
-	function clear()
-	{
-		$this->rows				= array();
-		$this->heading			= array();
-		$this->auto_heading		= TRUE;
->>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 	}
 
 	// --------------------------------------------------------------------
@@ -715,7 +434,6 @@ class CI_Table {
 	/**
 	 * Set table data from a database result object
 	 *
-<<<<<<< HEAD
 	 * @param	CI_DB_result	$db_result	Database result object
 	 * @return	void
 	 */
@@ -730,38 +448,6 @@ class CI_Table {
 		foreach ($object->result_array() as $row)
 		{
 			$this->rows[] = $this->_prep_args($row);
-=======
-	 * @access	public
-	 * @param	object
-	 * @return	void
-	 */
-	function _set_from_object($query)
-	{
-		if ( ! is_object($query))
-		{
-			return FALSE;
-		}
-
-		// First generate the headings from the table column names
-		if (count($this->heading) == 0)
-		{
-			if ( ! method_exists($query, 'list_fields'))
-			{
-				return FALSE;
-			}
-
-			$this->heading = $this->_prep_args($query->list_fields());
-		}
-
-		// Next blast through the result array and build out the rows
-
-		if ($query->num_rows() > 0)
-		{
-			foreach ($query->result_array() as $row)
-			{
-				$this->rows[] = $this->_prep_args($row);
-			}
->>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 		}
 	}
 
@@ -770,7 +456,6 @@ class CI_Table {
 	/**
 	 * Set table data from an array
 	 *
-<<<<<<< HEAD
 	 * @param	array	$data
 	 * @return	void
 	 */
@@ -784,33 +469,6 @@ class CI_Table {
 		foreach ($data as &$row)
 		{
 			$this->rows[] = $this->_prep_args($row);
-=======
-	 * @access	public
-	 * @param	array
-	 * @return	void
-	 */
-	function _set_from_array($data, $set_heading = TRUE)
-	{
-		if ( ! is_array($data) OR count($data) == 0)
-		{
-			return FALSE;
-		}
-
-		$i = 0;
-		foreach ($data as $row)
-		{
-			// If a heading hasn't already been set we'll use the first row of the array as the heading
-			if ($i == 0 AND count($data) > 1 AND count($this->heading) == 0 AND $set_heading == TRUE)
-			{
-				$this->heading = $this->_prep_args($row);
-			}
-			else
-			{
-				$this->rows[] = $this->_prep_args($row);
-			}
-
-			$i++;
->>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 		}
 	}
 
@@ -819,20 +477,11 @@ class CI_Table {
 	/**
 	 * Compile Template
 	 *
-<<<<<<< HEAD
 	 * @return	void
 	 */
 	protected function _compile_template()
 	{
 		if ($this->template === NULL)
-=======
-	 * @access	private
-	 * @return	void
-	 */
-	function _compile_template()
-	{
-		if ($this->template == NULL)
->>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 		{
 			$this->template = $this->_default_template();
 			return;
@@ -853,7 +502,6 @@ class CI_Table {
 	/**
 	 * Default Template
 	 *
-<<<<<<< HEAD
 	 * @return	array
 	 */
 	protected function _default_template()
@@ -887,44 +535,3 @@ class CI_Table {
 	}
 
 }
-=======
-	 * @access	private
-	 * @return	void
-	 */
-	function _default_template()
-	{
-		return  array (
-						'table_open'			=> '<table border="0" cellpadding="4" cellspacing="0">',
-
-						'thead_open'			=> '<thead>',
-						'thead_close'			=> '</thead>',
-
-						'heading_row_start'		=> '<tr>',
-						'heading_row_end'		=> '</tr>',
-						'heading_cell_start'	=> '<th>',
-						'heading_cell_end'		=> '</th>',
-
-						'tbody_open'			=> '<tbody>',
-						'tbody_close'			=> '</tbody>',
-
-						'row_start'				=> '<tr>',
-						'row_end'				=> '</tr>',
-						'cell_start'			=> '<td>',
-						'cell_end'				=> '</td>',
-
-						'row_alt_start'		=> '<tr>',
-						'row_alt_end'			=> '</tr>',
-						'cell_alt_start'		=> '<td>',
-						'cell_alt_end'			=> '</td>',
-
-						'table_close'			=> '</table>'
-					);
-	}
-
-
-}
-
-
-/* End of file Table.php */
-/* Location: ./system/libraries/Table.php */
->>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
