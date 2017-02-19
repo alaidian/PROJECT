@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 /**
  * CodeIgniter
@@ -39,6 +40,28 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**
  * Application Controller Class
+=======
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+/**
+ * CodeIgniter
+ *
+ * An open source application development framework for PHP 5.1.6 or newer
+ *
+ * @package		CodeIgniter
+ * @author		EllisLab Dev Team
+ * @copyright		Copyright (c) 2008 - 2014, EllisLab, Inc.
+ * @copyright		Copyright (c) 2014 - 2015, British Columbia Institute of Technology (http://bcit.ca/)
+ * @license		http://codeigniter.com/user_guide/license.html
+ * @link		http://codeigniter.com
+ * @since		Version 1.0
+ * @filesource
+ */
+
+// ------------------------------------------------------------------------
+
+/**
+ * CodeIgniter Application Controller Class
+>>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
  *
  * This class object is the super class that every library in
  * CodeIgniter will be assigned to.
@@ -47,6 +70,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * @subpackage	Libraries
  * @category	Libraries
  * @author		EllisLab Dev Team
+<<<<<<< HEAD
  * @link		https://codeigniter.com/user_guide/general/controllers.html
  */
 class CI_Controller {
@@ -62,6 +86,16 @@ class CI_Controller {
 	 * Class constructor
 	 *
 	 * @return	void
+=======
+ * @link		http://codeigniter.com/user_guide/general/controllers.html
+ */
+class CI_Controller {
+
+	private static $instance;
+
+	/**
+	 * Constructor
+>>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 	 */
 	public function __construct()
 	{
@@ -76,6 +110,7 @@ class CI_Controller {
 		}
 
 		$this->load =& load_class('Loader', 'core');
+<<<<<<< HEAD
 		$this->load->initialize();
 		log_message('info', 'Controller Class Initialized');
 	}
@@ -88,9 +123,25 @@ class CI_Controller {
 	 * @static
 	 * @return	object
 	 */
+=======
+
+		$this->load->initialize();
+		
+		log_message('debug', "Controller Class Initialized");
+	}
+
+>>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 	public static function &get_instance()
 	{
 		return self::$instance;
 	}
+<<<<<<< HEAD
 
 }
+=======
+}
+// END Controller class
+
+/* End of file Controller.php */
+/* Location: ./system/core/Controller.php */
+>>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc

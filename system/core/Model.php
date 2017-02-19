@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 /**
  * CodeIgniter
@@ -39,16 +40,43 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**
  * Model Class
+=======
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+/**
+ * CodeIgniter
+ *
+ * An open source application development framework for PHP 5.1.6 or newer
+ *
+ * @package		CodeIgniter
+ * @author		EllisLab Dev Team
+ * @copyright		Copyright (c) 2008 - 2014, EllisLab, Inc.
+ * @copyright		Copyright (c) 2014 - 2015, British Columbia Institute of Technology (http://bcit.ca/)
+ * @license		http://codeigniter.com/user_guide/license.html
+ * @link		http://codeigniter.com
+ * @since		Version 1.0
+ * @filesource
+ */
+
+// ------------------------------------------------------------------------
+
+/**
+ * CodeIgniter Model Class
+>>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
  *
  * @package		CodeIgniter
  * @subpackage	Libraries
  * @category	Libraries
  * @author		EllisLab Dev Team
+<<<<<<< HEAD
  * @link		https://codeigniter.com/user_guide/libraries/config.html
+=======
+ * @link		http://codeigniter.com/user_guide/libraries/config.html
+>>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
  */
 class CI_Model {
 
 	/**
+<<<<<<< HEAD
 	 * Class constructor
 	 *
 	 * @return	void
@@ -62,10 +90,24 @@ class CI_Model {
 
 	/**
 	 * __get magic
+=======
+	 * Constructor
+	 *
+	 * @access public
+	 */
+	function __construct()
+	{
+		log_message('debug', "Model Class Initialized");
+	}
+
+	/**
+	 * __get
+>>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 	 *
 	 * Allows models to access CI's loaded classes using the same
 	 * syntax as controllers.
 	 *
+<<<<<<< HEAD
 	 * @param	string	$key
 	 */
 	public function __get($key)
@@ -78,3 +120,18 @@ class CI_Model {
 	}
 
 }
+=======
+	 * @param	string
+	 * @access private
+	 */
+	function __get($key)
+	{
+		$CI =& get_instance();
+		return $CI->$key;
+	}
+}
+// END Model Class
+
+/* End of file Model.php */
+/* Location: ./system/core/Model.php */
+>>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc

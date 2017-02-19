@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 /**
  * CodeIgniter
  *
@@ -42,3 +43,14 @@ $lang['gigabyte_abbr'] = 'GB';
 $lang['megabyte_abbr'] = 'MB';
 $lang['kilobyte_abbr'] = 'KB';
 $lang['bytes'] = 'Bytes';
+=======
+
+$lang['terabyte_abbr'] = "TB";
+$lang['gigabyte_abbr'] = "GB";
+$lang['megabyte_abbr'] = "MB";
+$lang['kilobyte_abbr'] = "KB";
+$lang['bytes'] = "Bytes";
+
+/* End of file number_lang.php */
+/* Location: ./system/language/english/number_lang.php */
+>>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc

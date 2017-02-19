@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 /**
  * CodeIgniter
@@ -36,6 +37,25 @@
  * @filesource
  */
 defined('BASEPATH') OR exit('No direct script access allowed');
+=======
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+/**
+ * CodeIgniter
+ *
+ * An open source application development framework for PHP 5.1.6 or newer
+ *
+ * @package		CodeIgniter
+ * @author		EllisLab Dev Team
+ * @copyright		Copyright (c) 2008 - 2014, EllisLab, Inc.
+ * @copyright		Copyright (c) 2014 - 2015, British Columbia Institute of Technology (http://bcit.ca/)
+ * @license		http://codeigniter.com/user_guide/license.html
+ * @link		http://codeigniter.com
+ * @since		Version 1.0
+ * @filesource
+ */
+
+// ------------------------------------------------------------------------
+>>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 
 /**
  * CodeIgniter Number Helpers
@@ -44,11 +64,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * @subpackage	Helpers
  * @category	Helpers
  * @author		EllisLab Dev Team
+<<<<<<< HEAD
  * @link		https://codeigniter.com/user_guide/helpers/number_helper.html
+=======
+ * @link		http://codeigniter.com/user_guide/helpers/number_helper.html
+>>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
  */
 
 // ------------------------------------------------------------------------
 
+<<<<<<< HEAD
 if ( ! function_exists('byte_format'))
 {
 	/**
@@ -58,6 +83,17 @@ if ( ! function_exists('byte_format'))
 	 * @param	int
 	 * @return	string
 	 */
+=======
+/**
+ * Formats a numbers as bytes, based on size, and adds the appropriate suffix
+ *
+ * @access	public
+ * @param	mixed	// will be cast as int
+ * @return	string
+ */
+if ( ! function_exists('byte_format'))
+{
+>>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 	function byte_format($num, $precision = 1)
 	{
 		$CI =& get_instance();
@@ -92,3 +128,10 @@ if ( ! function_exists('byte_format'))
 		return number_format($num, $precision).' '.$unit;
 	}
 }
+<<<<<<< HEAD
+=======
+
+
+/* End of file number_helper.php */
+/* Location: ./system/helpers/number_helper.php */
+>>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc

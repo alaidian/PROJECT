@@ -6,6 +6,7 @@ application/cache/*
 
 application/logs/*
 !application/logs/index.html
+<<<<<<< HEAD
 !application/logs/.htaccess
 
 user_guide_src/build/*
@@ -25,3 +26,6 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 *.stTheme.cache
 *.sublime-workspace
 *.sublime-project
+=======
+!application/logs/.htaccess
+>>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc

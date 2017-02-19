@@ -104,7 +104,11 @@ class listProjectsForm//mobile
 var $Project_ID,$Project_Name,$Project_Status,$User_ID;
   function button_ViewDashboard_clk()
 	{}
+<<<<<<< HEAD
 
+=======
+}
+>>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 
   
 function empid_exists($storyid)

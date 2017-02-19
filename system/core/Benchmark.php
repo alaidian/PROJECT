@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 /**
  * CodeIgniter
@@ -42,26 +43,66 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  *
  * This class enables you to mark points and calculate the time difference
  * between them. Memory consumption can also be displayed.
+=======
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+/**
+ * CodeIgniter
+ *
+ * An open source application development framework for PHP 5.1.6 or newer
+ *
+ * @package		CodeIgniter
+ * @author		EllisLab Dev Team
+ * @copyright		Copyright (c) 2008 - 2014, EllisLab, Inc.
+ * @copyright		Copyright (c) 2014 - 2015, British Columbia Institute of Technology (http://bcit.ca/)
+ * @license		http://codeigniter.com/user_guide/license.html
+ * @link		http://codeigniter.com
+ * @since		Version 1.0
+ * @filesource
+ */
+
+// ------------------------------------------------------------------------
+
+/**
+ * CodeIgniter Benchmark Class
+ *
+ * This class enables you to mark points and calculate the time difference
+ * between them.  Memory consumption can also be displayed.
+>>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
  *
  * @package		CodeIgniter
  * @subpackage	Libraries
  * @category	Libraries
  * @author		EllisLab Dev Team
+<<<<<<< HEAD
  * @link		https://codeigniter.com/user_guide/libraries/benchmark.html
+=======
+ * @link		http://codeigniter.com/user_guide/libraries/benchmark.html
+>>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
  */
 class CI_Benchmark {
 
 	/**
+<<<<<<< HEAD
 	 * List of all benchmark markers
 	 *
 	 * @var	array
 	 */
 	public $marker = array();
+=======
+	 * List of all benchmark markers and when they were added
+	 *
+	 * @var array
+	 */
+	var $marker = array();
+
+	// --------------------------------------------------------------------
+>>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 
 	/**
 	 * Set a benchmark marker
 	 *
 	 * Multiple calls to this function can be made so that several
+<<<<<<< HEAD
 	 * execution points can be timed.
 	 *
 	 * @param	string	$name	Marker name
@@ -70,13 +111,27 @@ class CI_Benchmark {
 	public function mark($name)
 	{
 		$this->marker[$name] = microtime(TRUE);
+=======
+	 * execution points can be timed
+	 *
+	 * @access	public
+	 * @param	string	$name	name of the marker
+	 * @return	void
+	 */
+	function mark($name)
+	{
+		$this->marker[$name] = microtime();
+>>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 	}
 
 	// --------------------------------------------------------------------
 
 	/**
+<<<<<<< HEAD
 	 * Elapsed time
 	 *
+=======
+>>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 	 * Calculates the time difference between two marked points.
 	 *
 	 * If the first parameter is empty this function instead returns the
@@ -84,6 +139,7 @@ class CI_Benchmark {
 	 * execution time to be shown in a template. The output class will
 	 * swap the real value for this variable.
 	 *
+<<<<<<< HEAD
 	 * @param	string	$point1		A particular marked point
 	 * @param	string	$point2		A particular marked point
 	 * @param	int	$decimals	Number of decimal places
@@ -95,6 +151,17 @@ class CI_Benchmark {
 	public function elapsed_time($point1 = '', $point2 = '', $decimals = 4)
 	{
 		if ($point1 === '')
+=======
+	 * @access	public
+	 * @param	string	a particular marked point
+	 * @param	string	a particular marked point
+	 * @param	integer	the number of decimal places
+	 * @return	mixed
+	 */
+	function elapsed_time($point1 = '', $point2 = '', $decimals = 4)
+	{
+		if ($point1 == '')
+>>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 		{
 			return '{elapsed_time}';
 		}
@@ -106,10 +173,20 @@ class CI_Benchmark {
 
 		if ( ! isset($this->marker[$point2]))
 		{
+<<<<<<< HEAD
 			$this->marker[$point2] = microtime(TRUE);
 		}
 
 		return number_format($this->marker[$point2] - $this->marker[$point1], $decimals);
+=======
+			$this->marker[$point2] = microtime();
+		}
+
+		list($sm, $ss) = explode(' ', $this->marker[$point1]);
+		list($em, $es) = explode(' ', $this->marker[$point2]);
+
+		return number_format(($em + $es) - ($sm + $ss), $decimals);
+>>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 	}
 
 	// --------------------------------------------------------------------
@@ -117,17 +194,36 @@ class CI_Benchmark {
 	/**
 	 * Memory Usage
 	 *
+<<<<<<< HEAD
 	 * Simply returns the {memory_usage} marker.
 	 *
+=======
+	 * This function returns the {memory_usage} pseudo-variable.
+>>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 	 * This permits it to be put it anywhere in a template
 	 * without the memory being calculated until the end.
 	 * The output class will swap the real value for this variable.
 	 *
+<<<<<<< HEAD
 	 * @return	string	'{memory_usage}'
 	 */
 	public function memory_usage()
+=======
+	 * @access	public
+	 * @return	string
+	 */
+	function memory_usage()
+>>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 	{
 		return '{memory_usage}';
 	}
 
 }
+<<<<<<< HEAD
+=======
+
+// END CI_Benchmark class
+
+/* End of file Benchmark.php */
+/* Location: ./system/core/Benchmark.php */
+>>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc

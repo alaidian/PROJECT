@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 /**
  * CodeIgniter
@@ -36,16 +37,40 @@
  * @filesource
  */
 defined('BASEPATH') OR exit('No direct script access allowed');
+=======
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+/**
+ * CodeIgniter
+ *
+ * An open source application development framework for PHP 5.1.6 or newer
+ *
+ * @package		CodeIgniter
+ * @author		EllisLab Dev Team
+ * @copyright		Copyright (c) 2008 - 2014, EllisLab, Inc.
+ * @copyright		Copyright (c) 2014 - 2015, British Columbia Institute of Technology (http://bcit.ca/)
+ * @license		http://codeigniter.com/user_guide/license.html
+ * @link		http://codeigniter.com
+ * @since		Version 1.0
+ * @filesource
+ */
+
+// ------------------------------------------------------------------------
+>>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 
 /**
  * User Agent Class
  *
+<<<<<<< HEAD
  * Identifies the platform, browser, robot, or mobile device of the browsing agent
+=======
+ * Identifies the platform, browser, robot, or mobile devise of the browsing agent
+>>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
  *
  * @package		CodeIgniter
  * @subpackage	Libraries
  * @category	User Agent
  * @author		EllisLab Dev Team
+<<<<<<< HEAD
  * @link		https://codeigniter.com/user_guide/libraries/user_agent.html
  */
 class CI_User_agent {
@@ -163,16 +188,46 @@ class CI_User_agent {
 	public $referer;
 
 	// --------------------------------------------------------------------
+=======
+ * @link		http://codeigniter.com/user_guide/libraries/user_agent.html
+ */
+class CI_User_agent {
+
+	var $agent		= NULL;
+
+	var $is_browser	= FALSE;
+	var $is_robot	= FALSE;
+	var $is_mobile	= FALSE;
+
+	var $languages	= array();
+	var $charsets	= array();
+
+	var $platforms	= array();
+	var $browsers	= array();
+	var $mobiles	= array();
+	var $robots		= array();
+
+	var $platform	= '';
+	var $browser	= '';
+	var $version	= '';
+	var $mobile		= '';
+	var $robot		= '';
+>>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 
 	/**
 	 * Constructor
 	 *
 	 * Sets the User Agent and runs the compilation routine
 	 *
+<<<<<<< HEAD
+=======
+	 * @access	public
+>>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 	 * @return	void
 	 */
 	public function __construct()
 	{
+<<<<<<< HEAD
 		$this->_load_agent_file();
 
 		if (isset($_SERVER['HTTP_USER_AGENT']))
@@ -182,6 +237,22 @@ class CI_User_agent {
 		}
 
 		log_message('info', 'User Agent Class Initialized');
+=======
+		if (isset($_SERVER['HTTP_USER_AGENT']))
+		{
+			$this->agent = trim($_SERVER['HTTP_USER_AGENT']);
+		}
+
+		if ( ! is_null($this->agent))
+		{
+			if ($this->_load_agent_file())
+			{
+				$this->_compile_data();
+			}
+		}
+
+		log_message('debug', "User Agent Class Initialized");
+>>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 	}
 
 	// --------------------------------------------------------------------
@@ -189,6 +260,7 @@ class CI_User_agent {
 	/**
 	 * Compile the User Agent Data
 	 *
+<<<<<<< HEAD
 	 * @return	bool
 	 */
 	protected function _load_agent_file()
@@ -205,6 +277,22 @@ class CI_User_agent {
 		}
 
 		if ($found !== TRUE)
+=======
+	 * @access	private
+	 * @return	bool
+	 */
+	private function _load_agent_file()
+	{
+		if (defined('ENVIRONMENT') AND is_file(APPPATH.'config/'.ENVIRONMENT.'/user_agents.php'))
+		{
+			include(APPPATH.'config/'.ENVIRONMENT.'/user_agents.php');
+		}
+		elseif (is_file(APPPATH.'config/user_agents.php'))
+		{
+			include(APPPATH.'config/user_agents.php');
+		}
+		else
+>>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 		{
 			return FALSE;
 		}
@@ -247,9 +335,16 @@ class CI_User_agent {
 	/**
 	 * Compile the User Agent Data
 	 *
+<<<<<<< HEAD
 	 * @return	bool
 	 */
 	protected function _compile_data()
+=======
+	 * @access	private
+	 * @return	bool
+	 */
+	private function _compile_data()
+>>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 	{
 		$this->_set_platform();
 
@@ -267,6 +362,7 @@ class CI_User_agent {
 	/**
 	 * Set the Platform
 	 *
+<<<<<<< HEAD
 	 * @return	bool
 	 */
 	protected function _set_platform()
@@ -276,15 +372,31 @@ class CI_User_agent {
 			foreach ($this->platforms as $key => $val)
 			{
 				if (preg_match('|'.preg_quote($key).'|i', $this->agent))
+=======
+	 * @access	private
+	 * @return	mixed
+	 */
+	private function _set_platform()
+	{
+		if (is_array($this->platforms) AND count($this->platforms) > 0)
+		{
+			foreach ($this->platforms as $key => $val)
+			{
+				if (preg_match("|".preg_quote($key)."|i", $this->agent))
+>>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 				{
 					$this->platform = $val;
 					return TRUE;
 				}
 			}
 		}
+<<<<<<< HEAD
 
 		$this->platform = 'Unknown Platform';
 		return FALSE;
+=======
+		$this->platform = 'Unknown Platform';
+>>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 	}
 
 	// --------------------------------------------------------------------
@@ -292,6 +404,7 @@ class CI_User_agent {
 	/**
 	 * Set the Browser
 	 *
+<<<<<<< HEAD
 	 * @return	bool
 	 */
 	protected function _set_browser()
@@ -301,6 +414,18 @@ class CI_User_agent {
 			foreach ($this->browsers as $key => $val)
 			{
 				if (preg_match('|'.$key.'.*?([0-9\.]+)|i', $this->agent, $match))
+=======
+	 * @access	private
+	 * @return	bool
+	 */
+	private function _set_browser()
+	{
+		if (is_array($this->browsers) AND count($this->browsers) > 0)
+		{
+			foreach ($this->browsers as $key => $val)
+			{
+				if (preg_match("|".preg_quote($key).".*?([0-9\.]+)|i", $this->agent, $match))
+>>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 				{
 					$this->is_browser = TRUE;
 					$this->version = $match[1];
@@ -310,7 +435,10 @@ class CI_User_agent {
 				}
 			}
 		}
+<<<<<<< HEAD
 
+=======
+>>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 		return FALSE;
 	}
 
@@ -319,6 +447,7 @@ class CI_User_agent {
 	/**
 	 * Set the Robot
 	 *
+<<<<<<< HEAD
 	 * @return	bool
 	 */
 	protected function _set_robot()
@@ -332,11 +461,29 @@ class CI_User_agent {
 					$this->is_robot = TRUE;
 					$this->robot = $val;
 					$this->_set_mobile();
+=======
+	 * @access	private
+	 * @return	bool
+	 */
+	private function _set_robot()
+	{
+		if (is_array($this->robots) AND count($this->robots) > 0)
+		{
+			foreach ($this->robots as $key => $val)
+			{
+				if (preg_match("|".preg_quote($key)."|i", $this->agent))
+				{
+					$this->is_robot = TRUE;
+					$this->robot = $val;
+>>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 					return TRUE;
 				}
 			}
 		}
+<<<<<<< HEAD
 
+=======
+>>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 		return FALSE;
 	}
 
@@ -345,6 +492,7 @@ class CI_User_agent {
 	/**
 	 * Set the Mobile Device
 	 *
+<<<<<<< HEAD
 	 * @return	bool
 	 */
 	protected function _set_mobile()
@@ -354,6 +502,18 @@ class CI_User_agent {
 			foreach ($this->mobiles as $key => $val)
 			{
 				if (FALSE !== (stripos($this->agent, $key)))
+=======
+	 * @access	private
+	 * @return	bool
+	 */
+	private function _set_mobile()
+	{
+		if (is_array($this->mobiles) AND count($this->mobiles) > 0)
+		{
+			foreach ($this->mobiles as $key => $val)
+			{
+				if (FALSE !== (strpos(strtolower($this->agent), $key)))
+>>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 				{
 					$this->is_mobile = TRUE;
 					$this->mobile = $val;
@@ -361,7 +521,10 @@ class CI_User_agent {
 				}
 			}
 		}
+<<<<<<< HEAD
 
+=======
+>>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 		return FALSE;
 	}
 
@@ -370,6 +533,7 @@ class CI_User_agent {
 	/**
 	 * Set the accepted languages
 	 *
+<<<<<<< HEAD
 	 * @return	void
 	 */
 	protected function _set_languages()
@@ -380,6 +544,21 @@ class CI_User_agent {
 		}
 
 		if (count($this->languages) === 0)
+=======
+	 * @access	private
+	 * @return	void
+	 */
+	private function _set_languages()
+	{
+		if ((count($this->languages) == 0) AND isset($_SERVER['HTTP_ACCEPT_LANGUAGE']) AND $_SERVER['HTTP_ACCEPT_LANGUAGE'] != '')
+		{
+			$languages = preg_replace('/(;q=[0-9\.]+)/i', '', strtolower(trim($_SERVER['HTTP_ACCEPT_LANGUAGE'])));
+
+			$this->languages = explode(',', $languages);
+		}
+
+		if (count($this->languages) == 0)
+>>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 		{
 			$this->languages = array('Undefined');
 		}
@@ -390,6 +569,7 @@ class CI_User_agent {
 	/**
 	 * Set the accepted character sets
 	 *
+<<<<<<< HEAD
 	 * @return	void
 	 */
 	protected function _set_charsets()
@@ -400,6 +580,21 @@ class CI_User_agent {
 		}
 
 		if (count($this->charsets) === 0)
+=======
+	 * @access	private
+	 * @return	void
+	 */
+	private function _set_charsets()
+	{
+		if ((count($this->charsets) == 0) AND isset($_SERVER['HTTP_ACCEPT_CHARSET']) AND $_SERVER['HTTP_ACCEPT_CHARSET'] != '')
+		{
+			$charsets = preg_replace('/(;q=.+)/i', '', strtolower(trim($_SERVER['HTTP_ACCEPT_CHARSET'])));
+
+			$this->charsets = explode(',', $charsets);
+		}
+
+		if (count($this->charsets) == 0)
+>>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 		{
 			$this->charsets = array('Undefined');
 		}
@@ -410,7 +605,11 @@ class CI_User_agent {
 	/**
 	 * Is Browser
 	 *
+<<<<<<< HEAD
 	 * @param	string	$key
+=======
+	 * @access	public
+>>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 	 * @return	bool
 	 */
 	public function is_browser($key = NULL)
@@ -427,7 +626,11 @@ class CI_User_agent {
 		}
 
 		// Check for a specific browser
+<<<<<<< HEAD
 		return (isset($this->browsers[$key]) && $this->browser === $this->browsers[$key]);
+=======
+		return array_key_exists($key, $this->browsers) AND $this->browser === $this->browsers[$key];
+>>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 	}
 
 	// --------------------------------------------------------------------
@@ -435,7 +638,11 @@ class CI_User_agent {
 	/**
 	 * Is Robot
 	 *
+<<<<<<< HEAD
 	 * @param	string	$key
+=======
+	 * @access	public
+>>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 	 * @return	bool
 	 */
 	public function is_robot($key = NULL)
@@ -452,7 +659,11 @@ class CI_User_agent {
 		}
 
 		// Check for a specific robot
+<<<<<<< HEAD
 		return (isset($this->robots[$key]) && $this->robot === $this->robots[$key]);
+=======
+		return array_key_exists($key, $this->robots) AND $this->robot === $this->robots[$key];
+>>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 	}
 
 	// --------------------------------------------------------------------
@@ -460,7 +671,11 @@ class CI_User_agent {
 	/**
 	 * Is Mobile
 	 *
+<<<<<<< HEAD
 	 * @param	string	$key
+=======
+	 * @access	public
+>>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 	 * @return	bool
 	 */
 	public function is_mobile($key = NULL)
@@ -477,7 +692,11 @@ class CI_User_agent {
 		}
 
 		// Check for a specific robot
+<<<<<<< HEAD
 		return (isset($this->mobiles[$key]) && $this->mobile === $this->mobiles[$key]);
+=======
+		return array_key_exists($key, $this->mobiles) AND $this->mobile === $this->mobiles[$key];
+>>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 	}
 
 	// --------------------------------------------------------------------
@@ -485,10 +704,15 @@ class CI_User_agent {
 	/**
 	 * Is this a referral from another site?
 	 *
+<<<<<<< HEAD
+=======
+	 * @access	public
+>>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 	 * @return	bool
 	 */
 	public function is_referral()
 	{
+<<<<<<< HEAD
 		if ( ! isset($this->referer))
 		{
 			if (empty($_SERVER['HTTP_REFERER']))
@@ -505,6 +729,13 @@ class CI_User_agent {
 		}
 
 		return $this->referer;
+=======
+		if ( ! isset($_SERVER['HTTP_REFERER']) OR $_SERVER['HTTP_REFERER'] == '')
+		{
+			return FALSE;
+		}
+		return TRUE;
+>>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 	}
 
 	// --------------------------------------------------------------------
@@ -512,6 +743,10 @@ class CI_User_agent {
 	/**
 	 * Agent String
 	 *
+<<<<<<< HEAD
+=======
+	 * @access	public
+>>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 	 * @return	string
 	 */
 	public function agent_string()
@@ -524,6 +759,10 @@ class CI_User_agent {
 	/**
 	 * Get Platform
 	 *
+<<<<<<< HEAD
+=======
+	 * @access	public
+>>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 	 * @return	string
 	 */
 	public function platform()
@@ -536,6 +775,10 @@ class CI_User_agent {
 	/**
 	 * Get Browser Name
 	 *
+<<<<<<< HEAD
+=======
+	 * @access	public
+>>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 	 * @return	string
 	 */
 	public function browser()
@@ -548,6 +791,10 @@ class CI_User_agent {
 	/**
 	 * Get the Browser Version
 	 *
+<<<<<<< HEAD
+=======
+	 * @access	public
+>>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 	 * @return	string
 	 */
 	public function version()
@@ -560,6 +807,10 @@ class CI_User_agent {
 	/**
 	 * Get The Robot Name
 	 *
+<<<<<<< HEAD
+=======
+	 * @access	public
+>>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 	 * @return	string
 	 */
 	public function robot()
@@ -571,6 +822,10 @@ class CI_User_agent {
 	/**
 	 * Get the Mobile Device
 	 *
+<<<<<<< HEAD
+=======
+	 * @access	public
+>>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 	 * @return	string
 	 */
 	public function mobile()
@@ -583,11 +838,19 @@ class CI_User_agent {
 	/**
 	 * Get the referrer
 	 *
+<<<<<<< HEAD
+=======
+	 * @access	public
+>>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 	 * @return	bool
 	 */
 	public function referrer()
 	{
+<<<<<<< HEAD
 		return empty($_SERVER['HTTP_REFERER']) ? '' : trim($_SERVER['HTTP_REFERER']);
+=======
+		return ( ! isset($_SERVER['HTTP_REFERER']) OR $_SERVER['HTTP_REFERER'] == '') ? '' : trim($_SERVER['HTTP_REFERER']);
+>>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 	}
 
 	// --------------------------------------------------------------------
@@ -595,11 +858,19 @@ class CI_User_agent {
 	/**
 	 * Get the accepted languages
 	 *
+<<<<<<< HEAD
+=======
+	 * @access	public
+>>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 	 * @return	array
 	 */
 	public function languages()
 	{
+<<<<<<< HEAD
 		if (count($this->languages) === 0)
+=======
+		if (count($this->languages) == 0)
+>>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 		{
 			$this->_set_languages();
 		}
@@ -612,11 +883,19 @@ class CI_User_agent {
 	/**
 	 * Get the accepted Character Sets
 	 *
+<<<<<<< HEAD
+=======
+	 * @access	public
+>>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 	 * @return	array
 	 */
 	public function charsets()
 	{
+<<<<<<< HEAD
 		if (count($this->charsets) === 0)
+=======
+		if (count($this->charsets) == 0)
+>>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 		{
 			$this->_set_charsets();
 		}
@@ -629,12 +908,20 @@ class CI_User_agent {
 	/**
 	 * Test for a particular language
 	 *
+<<<<<<< HEAD
 	 * @param	string	$lang
+=======
+	 * @access	public
+>>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 	 * @return	bool
 	 */
 	public function accept_lang($lang = 'en')
 	{
+<<<<<<< HEAD
 		return in_array(strtolower($lang), $this->languages(), TRUE);
+=======
+		return (in_array(strtolower($lang), $this->languages(), TRUE));
+>>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 	}
 
 	// --------------------------------------------------------------------
@@ -642,11 +929,16 @@ class CI_User_agent {
 	/**
 	 * Test for a particular character set
 	 *
+<<<<<<< HEAD
 	 * @param	string	$charset
+=======
+	 * @access	public
+>>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 	 * @return	bool
 	 */
 	public function accept_charset($charset = 'utf-8')
 	{
+<<<<<<< HEAD
 		return in_array(strtolower($charset), $this->charsets(), TRUE);
 	}
 
@@ -679,3 +971,13 @@ class CI_User_agent {
 	}
 
 }
+=======
+		return (in_array(strtolower($charset), $this->charsets(), TRUE));
+	}
+
+}
+
+
+/* End of file User_agent.php */
+/* Location: ./system/libraries/User_agent.php */
+>>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc

@@ -1,9 +1,14 @@
 <?php
+<<<<<<< HEAD
 //include('class_dia.php');
+=======
+include('class_dia.php');
+>>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 class DashboardController extends CI_Controller
 {
 	 var $Project_ID,$Project_Name,$Project_Status,$Story_ID,$Story_Name,$UserStory,$UserStory_Status,$Size,$Priority,$Sprint_Number,$Release_Number,$Use_case_ID,$Task_ID,$Task_Description,$Assigned_To,$Estimated_Hours,$Remaining_Hours,$Task_Status;
 	  function index()
+<<<<<<< HEAD
 	  {
 		$this->load->library('session');
 		$_SESSION['SID']=0;
@@ -134,6 +139,19 @@ class DashboardController extends CI_Controller
 		$this->load->view('DashboardController/ViewUserStoryForm');
 		$this->load->view('templates/footer');
 	 }
+=======
+	  {}
+	  function saveTaskDetail()
+	 {}
+	   function saveUserStoryDetail()
+	 {
+		
+	 }
+	   function ifTaskExists()
+	 {}
+	   function selectGivenUserStory()
+	 {}
+>>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 	   function Login()
 	 {}
 	   function getNewStatus()
@@ -146,6 +164,7 @@ class DashboardController extends CI_Controller
 	 {}
 	   function remainingHours_dblclk()
 	 {}
+<<<<<<< HEAD
 	   function selectGivenUserDetail($uid)
 	 {
 		//$uid = $this->session->userdata('UserStory_ID');
@@ -304,6 +323,10 @@ class DashboardController extends CI_Controller
 		}
 	
 	}
+=======
+	   function selectGivenUserDeatail()
+	 {}
+>>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 	
 }
 ?>

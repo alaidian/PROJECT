@@ -1,5 +1,9 @@
 <?php
+<<<<<<< HEAD
 //include('class_dia.php');
+=======
+include('class_dia.php');
+>>>>>>> 68a1186b0b4b1e67e2c4408b87da58ab2aa416cc
 	 class Admin_controller extends CI_Controller
 	{
 		public function index()
